@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarik Media - Professional Photography & Videography</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">Tarik Media</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content fade-in-up">
+            <h1 class="hero-title">Book a Free Consultation with Tarik</h1>
+            <p class="hero-subtitle">
+                Professional photography and videography services to capture your most important moments. 
+                Let's discuss your vision and bring it to life.
+            </p>
+            <button class="cta-button" onclick="smoothScrollTo('#booking');">
+                📅 Book Now - It's Free
+            </button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="services">
+        <div class="container">
+            <h2 class="section-title">What I Offer</h2>
+            <p class="section-subtitle">Professional visual storytelling tailored to your unique needs</p>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">📸</div>
+                    <h3 class="feature-title">Photography</h3>
+                    <p class="feature-description">
+                        Capture stunning portraits, events, and commercial photography with creative composition and professional lighting techniques.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">🎥</div>
+                    <h3 class="feature-title">Videography</h3>
+                    <p class="feature-description">
+                        Create compelling video content, documentaries, and promotional materials that tell your story with cinematic quality.
+                    </p>
+                </div>
+                
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Post-Production</h3>
+                    <p class="feature-description">
+                        Professional editing, color grading, and post-production services to polish your content to perfection.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">About Tarik</h2>
+            <div class="about-content">
+                <div class="about-text fade-in-up">
+                    <p>
+                        With years of experience in visual storytelling, I specialize in creating compelling photographs and videos that capture the essence of every moment. Whether it's a corporate event, wedding, portrait session, or commercial project, I bring creativity, professionalism, and technical expertise to every shoot.
+                    </p>
+                    <br>
+                    <p>
+                        My approach combines artistic vision with cutting-edge technology to deliver results that exceed expectations. From concept to final delivery, I work closely with clients to ensure their vision comes to life through powerful visual narratives.
+                    </p>
+                </div>
+                <div class="about-image">
+                    📷
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Booking Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <h2 class="section-title slide-in-up">Book Your Session</h2>
+            <p class="section-subtitle slide-in-up">Ready to capture your vision? Choose your preferred date and time below.</p>
+            
+            <div class="booking-container slide-in-up">
+                <!-- Custom Calendar Interface -->
+                <div id="customBookingCalendar" class="calendar-wrapper">
+                    <!-- Step 1: Calendar View -->
+                    <div id="calendarStep" class="booking-step active">
+                        <div class="calendar-header">
+                            <button id="prevMonth" class="calendar-nav-btn">‹</button>
+                            <h3 id="currentMonth" class="calendar-title">Loading...</h3>
+                            <button id="nextMonth" class="calendar-nav-btn">›</button>
+                        </div>
+                        
+                        <div class="calendar-grid">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">Sun</div>
+                                <div class="weekday">Mon</div>
+                                <div class="weekday">Tue</div>
+                                <div class="weekday">Wed</div>
+                                <div class="weekday">Thu</div>
+                                <div class="weekday">Fri</div>
+                                <div class="weekday">Sat</div>
+                            </div>
+                            <div id="calendarDates" class="calendar-dates">
+                                <!-- Calendar dates will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="availability-legend">
+                            <div class="legend-item">
+                                <div class="legend-dot available"></div>
+                                <span>Available</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-dot unavailable"></div>
+                                <span>Unavailable</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Time Selection -->
+                    <div id="timeStep" class="booking-step">
+                        <div class="step-header">
+                            <button id="backToCalendar" class="back-btn">← Back to Calendar</button>
+                            <h3 id="selectedDateTitle">Select Time</h3>
+                        </div>
+                        
+                        <div id="timeSlots" class="time-slots">
+                            <!-- Time slots will be populated by JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Booking Form -->
+                    <div id="formStep" class="booking-step">
+                        <div class="step-header">
+                            <button id="backToTimes" class="back-btn">← Back to Times</button>
+                            <h3>Complete Your Booking</h3>
+                        </div>
+                        
+                        <div class="booking-summary">
+                            <div class="summary-item">
+                                <strong>Date:</strong> <span id="summaryDate"></span>
+                            </div>
+                            <div class="summary-item">
+                                <strong>Time:</strong> <span id="summaryTime"></span>
+                            </div>
+                        </div>
+                        
+                        <form id="bookingForm" class="booking-form">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" id="fullName" name="fullName" class="form-input" required placeholder="Your full name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Tell me about your project</label>
+                                <textarea id="message" name="message" class="form-input" rows="4" placeholder="Describe your vision, the type of session you're looking for, preferred style, location ideas, or any specific requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="booking-cta" id="submitBooking">
+                                <span class="btn-text">📅 Confirm Booking</span>
+                                <span class="btn-loading" style="display: none;">⏳ Booking...</span>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Confirmation Step -->
+                    <div id="confirmationStep" class="booking-step">
+                        <div class="confirmation-content">
+                            <div class="success-animation">
+                                <div class="success-checkmark">✓</div>
+                                <h3>Booking Confirmed!</h3>
+                                <p>Your photography session has been successfully scheduled. You'll receive a confirmation email with all the details shortly.</p>
+                            </div>
+                            
+                            <div class="booking-summary-final">
+                                <h4>Your Appointment Details</h4>
+                                <div class="confirmation-details">
+                                    <div class="detail-row">
+                                        <span class="detail-label">📅 Date:</span>
+                                        <span class="detail-value" id="confirmationDate">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">⏰ Time:</span>
+                                        <span class="detail-value" id="confirmationTime">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">👤 Name:</span>
+                                        <span class="detail-value" id="confirmationName">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">📧 Email:</span>
+                                        <span class="detail-value" id="confirmationEmail">-</span>
+                                    </div>
+                                    <div class="detail-row">
+                                        <span class="detail-label">🎫 Booking ID:</span>
+                                        <span class="detail-value confirmation-id" id="confirmationId">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="confirmation-actions">
+                                <button onclick="calendar.resetBooking()" class="new-booking-btn primary">
+                                    📅 Book Another Session
+                                </button>
+                                <p class="confirmation-note">
+                                    📧 Need to make changes? Check your email for the rescheduling link or contact us at least 24 hours before your session.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Loading overlay -->
+                <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+                    <div class="loading-spinner"></div>
+                    <p>Loading available times...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Tarik Media. Professional Photography & Videography Services.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
